@@ -28,7 +28,7 @@ public class EscapeMenu : MonoBehaviour {
         }
 	}
 
-    void Resume() {
+    public void Resume() {
         isPaused = false;
         pausePanel.a = 0f;
         gameObject.GetComponent<Image>().color = pausePanel;
