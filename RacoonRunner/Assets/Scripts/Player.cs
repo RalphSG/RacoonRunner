@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour {
 
     private Vector2 targetPos;
+	private Vector2 effectPos;
+	public GameObject walkingEffect;
 
     public float speed;
     public float Yincrement;
@@ -19,6 +21,8 @@ public class Player : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
+		effectPos = new Vector2(transform.position.x, transform.position.y - 3.9f);
+
         healthDisplay.text = health.ToString();
 
         if (health <= 0) {
@@ -28,11 +32,13 @@ public class Player : MonoBehaviour {
         transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < maxHeight) {
-            targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
+			Instantiate(walkingEffect, effectPos, Quaternion.Euler(180, 0, 180));
+			targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > minHeight)
         {
-            targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
+			Instantiate(walkingEffect, effectPos, Quaternion.Euler(180, 0, 180));
+			targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
         }
     }
 }
