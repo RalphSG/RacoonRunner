@@ -17,6 +17,8 @@ public class Player : MonoBehaviour {
     public float minHeight;
     public int health = 3;
 
+    public GameObject moveSound;
+
     public GameObject gameOver;
 
     public Text healthDisplay;
@@ -45,11 +47,13 @@ public class Player : MonoBehaviour {
 
             if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < maxHeight)
             {
+                Instantiate(moveSound, effectPos, Quaternion.identity);
                 Instantiate(walkingEffect, effectPos, Quaternion.Euler(180, 0, 180));
                 targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
             }
             else if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > minHeight)
             {
+                Instantiate(moveSound, effectPos, Quaternion.identity);
                 Instantiate(walkingEffect, effectPos, Quaternion.Euler(180, 0, 180));
                 targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
             }

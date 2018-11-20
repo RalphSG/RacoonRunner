@@ -8,6 +8,9 @@ public class Restart : MonoBehaviour {
     public Animator transitionAnim;
     public bool rPressed;
 
+    public GameObject deathSound;
+    public bool deathSoundBool;
+
     public string scene1;
 
     private void Start()
@@ -20,6 +23,11 @@ public class Restart : MonoBehaviour {
     void Update () {
         if (Time.timeScale == 1f && rPressed == false){
             StartCoroutine(FreezeGame());
+        }
+        if (gameObject.activeSelf == true && deathSoundBool == false)
+        {
+            Instantiate(deathSound, transform.position, Quaternion.identity);
+            deathSoundBool = true;
         }
 	}
 

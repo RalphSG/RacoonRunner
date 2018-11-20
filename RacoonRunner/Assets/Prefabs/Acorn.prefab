@@ -72,6 +72,9 @@ MonoBehaviour:
   damage: 0
   speed: 40
   effect: {fileID: 1914497448485544, guid: 4849ea8d07e5ee64abf48aae578f4b32, type: 2}
+  destructionSound: {fileID: 1348023259623234, guid: b164aca124f941344b470f14be931c9b,
+    type: 2}
+  hitSound: {fileID: 1106081177983202, guid: 20e84044d9c902446a39fdcb7d64864d, type: 2}
 --- !u!114 &114853164285818570
 MonoBehaviour:
   m_ObjectHideFlags: 1

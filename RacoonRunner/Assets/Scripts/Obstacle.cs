@@ -9,6 +9,9 @@ public class Obstacle : MonoBehaviour {
 
     public GameObject effect;
 
+    public GameObject destructionSound;
+    public GameObject hitSound;
+
     private Shake shake;
 
     private void Start()
@@ -25,10 +28,12 @@ public class Obstacle : MonoBehaviour {
 
         if (other.CompareTag("Player")) {
 
+            Instantiate(destructionSound, transform.position, Quaternion.identity);
             Instantiate(effect, transform.position, Quaternion.identity);
             other.GetComponent<Player>().health -= damage;
             Debug.Log(other.GetComponent<Player>().health);
             if (gameObject.CompareTag("Obstacle")) {
+                Instantiate(hitSound, transform.position, Quaternion.identity);
                 shake.CamShake();
             }
             Destroy(gameObject);

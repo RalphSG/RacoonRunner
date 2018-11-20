@@ -67,6 +67,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4707187929615606}
+  - component: {fileID: 114455560709378138}
   m_Layer: 0
   m_Name: ObstaclePattern04
   m_TagString: Untagged
@@ -142,6 +143,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acorn: {fileID: 1220140617729824, guid: 5c3a72cf40de7114685316620b261ab1, type: 2}
   acornSpawnChance: 2
+--- !u!114 &114455560709378138
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1927758303089600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff111537e16f34c43b9bbf13c9a0b760, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 5
 --- !u!114 &114467778446766632
 MonoBehaviour:
   m_ObjectHideFlags: 1

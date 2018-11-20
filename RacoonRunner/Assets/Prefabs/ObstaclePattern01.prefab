@@ -67,6 +67,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4391338503685180}
+  - component: {fileID: 114002750516297388}
   m_Layer: 0
   m_Name: ObstaclePattern01
   m_TagString: Untagged
@@ -129,6 +130,18 @@ Transform:
   m_Father: {fileID: 4391338503685180}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114002750516297388
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1627408480317000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff111537e16f34c43b9bbf13c9a0b760, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 5
 --- !u!114 &114200937292716664
 MonoBehaviour:
   m_ObjectHideFlags: 1
