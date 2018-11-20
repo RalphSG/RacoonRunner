@@ -9,6 +9,13 @@ public class Obstacle : MonoBehaviour {
 
     public GameObject effect;
 
+    private Shake shake;
+
+    private void Start()
+    {
+        shake = GameObject.FindGameObjectWithTag("ScreenShake").GetComponent<Shake>();
+    }
+
     private void Update()
     {
         transform.Translate(Vector2.left * speed * Time.deltaTime);
@@ -19,9 +26,11 @@ public class Obstacle : MonoBehaviour {
         if (other.CompareTag("Player")) {
 
             Instantiate(effect, transform.position, Quaternion.identity);
-
             other.GetComponent<Player>().health -= damage;
             Debug.Log(other.GetComponent<Player>().health);
+            if (gameObject.CompareTag("Obstacle")) {
+                shake.CamShake();
+            }
             Destroy(gameObject);
         }
     }

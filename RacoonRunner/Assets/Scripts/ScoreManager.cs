@@ -14,7 +14,7 @@ public class ScoreManager : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Acorn")) {
+        if (other.CompareTag("Acorn") && gameObject.CompareTag("Player")) {
             score++;
             Debug.Log(score);
         }

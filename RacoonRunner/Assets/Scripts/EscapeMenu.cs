@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class EscapeMenu : MonoBehaviour {
 
     public GameObject escapeMenu;
+    public GameObject escapeMenuCondition;
     public static bool isPaused = false;
 
     public Animator transitionAnim;
@@ -19,7 +20,7 @@ public class EscapeMenu : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
+        if (Input.GetKeyDown(KeyCode.Escape) && escapeMenuCondition.CompareTag("Player")) {
             if (isPaused) {
                 Resume();
             } else {
