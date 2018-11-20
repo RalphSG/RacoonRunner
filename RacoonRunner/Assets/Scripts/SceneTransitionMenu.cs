@@ -31,7 +31,7 @@ public class SceneTransitionMenu : MonoBehaviour {
 
 	IEnumerator LoadScene1(){
 		transitionAnim.SetTrigger ("end");
-		yield return new WaitForSeconds (1.7f);
+		yield return new WaitForSeconds (1.2f);
 		SceneManager.LoadScene (sceneName1);
 	}
 
@@ -42,7 +42,7 @@ public class SceneTransitionMenu : MonoBehaviour {
 	IEnumerator LoadScene2(){
 		transitionAnim.SetTrigger ("end");
         player.tag = "InvinsiblePlayer";
-        yield return new WaitForSeconds (1.7f);
+        yield return new WaitForSeconds (1.2f);
 		SceneManager.LoadScene (sceneName2);
 	}
 
@@ -52,7 +52,7 @@ public class SceneTransitionMenu : MonoBehaviour {
 
 	IEnumerator LoadScene3(){
 		transitionAnim.SetTrigger ("end");
-		yield return new WaitForSeconds (1.7f);
+		yield return new WaitForSeconds (1.2f);
 		SceneManager.LoadScene (sceneName3);
 	}
 
@@ -62,7 +62,7 @@ public class SceneTransitionMenu : MonoBehaviour {
 
 	IEnumerator LoadScene4(){
 		transitionAnim.SetTrigger ("end");
-		yield return new WaitForSeconds (1.7f);
+		yield return new WaitForSeconds (1.2f);
         Application.Quit();
 	}
 }
