@@ -18,7 +18,10 @@ public class SceneTransitionMenu : MonoBehaviour {
 
     private void Start()
     {
-        mouseCursor.SetActive(false);
+        if (SceneManager.GetActiveScene().name == "EndlessRunner")
+        {
+            mouseCursor.SetActive(false);
+        }
         Cursor.visible = false;
     }
 
@@ -28,7 +31,7 @@ public class SceneTransitionMenu : MonoBehaviour {
 
 	IEnumerator LoadScene1(){
 		transitionAnim.SetTrigger ("end");
-		yield return new WaitForSeconds (1.1f);
+		yield return new WaitForSeconds (1.7f);
 		SceneManager.LoadScene (sceneName1);
 	}
 
@@ -39,7 +42,7 @@ public class SceneTransitionMenu : MonoBehaviour {
 	IEnumerator LoadScene2(){
 		transitionAnim.SetTrigger ("end");
         player.tag = "InvinsiblePlayer";
-        yield return new WaitForSeconds (1.1f);
+        yield return new WaitForSeconds (1.7f);
 		SceneManager.LoadScene (sceneName2);
 	}
 
@@ -49,7 +52,7 @@ public class SceneTransitionMenu : MonoBehaviour {
 
 	IEnumerator LoadScene3(){
 		transitionAnim.SetTrigger ("end");
-		yield return new WaitForSeconds (1.1f);
+		yield return new WaitForSeconds (1.7f);
 		SceneManager.LoadScene (sceneName3);
 	}
 
@@ -59,7 +62,7 @@ public class SceneTransitionMenu : MonoBehaviour {
 
 	IEnumerator LoadScene4(){
 		transitionAnim.SetTrigger ("end");
-		yield return new WaitForSeconds (1.1f);
+		yield return new WaitForSeconds (1.7f);
         Application.Quit();
 	}
 }

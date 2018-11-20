@@ -378,6 +378,7 @@ MonoBehaviour:
   health: 3
   moveSound: {fileID: 1578689078220366, guid: ff938abf629286a409de8f64db9d595e, type: 2}
   gameOver: {fileID: 621687906}
+  moveRestriction: {fileID: 630836042}
   healthDisplay: {fileID: 324829910}
 --- !u!50 &37487474
 Rigidbody2D:
@@ -2023,6 +2024,7 @@ MonoBehaviour:
   escapeMenuCondition: {fileID: 37487469}
   transitionAnim: {fileID: 630836044}
   mouseCursor: {fileID: 1872271537}
+  pausePanelObject: {fileID: 630836042}
 --- !u!114 &798727869
 MonoBehaviour:
   m_ObjectHideFlags: 0

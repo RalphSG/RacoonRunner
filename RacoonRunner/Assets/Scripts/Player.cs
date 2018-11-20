@@ -8,6 +8,7 @@ public class Player : MonoBehaviour {
 
     private Vector2 targetPos;
     private Vector2 effectPos;
+
     public GameObject walkingEffect;
     public Animator[] anim;
 
@@ -20,6 +21,8 @@ public class Player : MonoBehaviour {
     public GameObject moveSound;
 
     public GameObject gameOver;
+
+    public GameObject moveRestriction;
 
     public Text healthDisplay;
 
@@ -45,13 +48,13 @@ public class Player : MonoBehaviour {
 
             transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
 
-            if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < maxHeight)
+            if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < maxHeight && moveRestriction.activeSelf == false)
             {
                 Instantiate(moveSound, effectPos, Quaternion.identity);
                 Instantiate(walkingEffect, effectPos, Quaternion.Euler(180, 0, 180));
                 targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
             }
-            else if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > minHeight)
+            else if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > minHeight && moveRestriction.activeSelf == false)
             {
                 Instantiate(moveSound, effectPos, Quaternion.identity);
                 Instantiate(walkingEffect, effectPos, Quaternion.Euler(180, 0, 180));

@@ -13,10 +13,14 @@ public class EscapeMenu : MonoBehaviour {
     private Color pausePanel;
 
     public GameObject mouseCursor;
+
+    public GameObject pausePanelObject;
+
     // Use this for initialization
     void Start () {
         pausePanel = gameObject.GetComponent<Image>().color;
         pausePanel.a = 0f;
+        pausePanelObject.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -28,11 +32,13 @@ public class EscapeMenu : MonoBehaviour {
                 Pause();
             }
             mouseCursor.SetActive(isPaused);
+            Cursor.visible = false;
         }
 	}
 
     public void Resume() {
         isPaused = false;
+        pausePanelObject.SetActive(isPaused);
         pausePanel.a = 0f;
         gameObject.GetComponent<Image>().color = pausePanel;
         transitionAnim.SetBool("paused", isPaused);
@@ -41,6 +47,7 @@ public class EscapeMenu : MonoBehaviour {
 
     void Pause() {
         isPaused = true;
+        pausePanelObject.SetActive(isPaused);
         pausePanel.a = 0.7f;
         gameObject.GetComponent<Image>().color = pausePanel;
         transitionAnim.SetBool("paused", isPaused);
