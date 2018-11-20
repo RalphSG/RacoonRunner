@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class SceneTransitionMenu : MonoBehaviour {
@@ -11,9 +12,17 @@ public class SceneTransitionMenu : MonoBehaviour {
 	public string sceneName3;
 	public string sceneName4;
 
+    public GameObject mouseCursor;
+
     public GameObject player;
 
-	public void NewGame(){
+    private void Start()
+    {
+        mouseCursor.SetActive(false);
+        Cursor.visible = false;
+    }
+
+    public void NewGame(){
 		StartCoroutine (LoadScene1());
 	}
 

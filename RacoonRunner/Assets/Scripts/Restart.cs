@@ -11,6 +11,8 @@ public class Restart : MonoBehaviour {
     public GameObject deathSound;
     public bool deathSoundBool;
 
+    public GameObject mouseCursor;
+
     public string scene1;
 
     private void Start()
@@ -28,6 +30,9 @@ public class Restart : MonoBehaviour {
         {
             Instantiate(deathSound, transform.position, Quaternion.identity);
             deathSoundBool = true;
+        }
+        if (gameObject.activeSelf) {
+            mouseCursor.SetActive(true);
         }
 	}
 

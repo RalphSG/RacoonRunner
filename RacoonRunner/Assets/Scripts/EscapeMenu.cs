@@ -12,6 +12,7 @@ public class EscapeMenu : MonoBehaviour {
     public Animator transitionAnim;
     private Color pausePanel;
 
+    public GameObject mouseCursor;
     // Use this for initialization
     void Start () {
         pausePanel = gameObject.GetComponent<Image>().color;
@@ -26,6 +27,7 @@ public class EscapeMenu : MonoBehaviour {
             } else {
                 Pause();
             }
+            mouseCursor.SetActive(isPaused);
         }
 	}
 
